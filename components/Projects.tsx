@@ -23,7 +23,7 @@ const projects: Project[] = [
         description: "Co-developed the TeamsCave sports management ecosystem, taking full ownership of the premium whitelabel mobile application. This specific design for PTA empowers students and parents with streamlined attendance, event registration, and secure digital identity management.",
         tag: "Mobile Whitelabel",
         thumbnail: "/pta/landingpage.jpg",
-        apkLink: "/pta/pta_app.apk",
+        apkLink: "https://drive.google.com/uc?export=download&id=1TpUETH8vr7AbCuVcziwxZH4M088Uxn_t",
         gallery: [
             "/pta/landingpage.jpg",
             "/pta/loginpage.jpg",
