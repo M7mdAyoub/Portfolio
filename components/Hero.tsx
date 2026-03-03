@@ -36,14 +36,14 @@ export default function Hero() {
                     transition={{ delay: 0.5 }}
                     style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '2rem' }}
                 >
-                    <div style={{ width: '40px', height: '1px', background: 'var(--accent-color)' }} />
-                    <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.6rem', color: 'var(--secondary-color)', fontWeight: 600 }}>
+                    <div style={{ display: 'none', width: '40px', height: '1px', background: 'var(--accent-color)' }} className="hero-divider" />
+                    <span className="hero-subtitle" style={{ textTransform: 'uppercase', color: 'var(--secondary-color)', fontWeight: 600 }}>
                         Computer Science Graduate
                     </span>
-                    <div style={{ width: '40px', height: '1px', background: 'var(--accent-color)' }} />
+                    <div style={{ display: 'none', width: '40px', height: '1px', background: 'var(--accent-color)' }} className="hero-divider" />
                 </motion.div>
 
-                <h1 style={{ fontSize: 'clamp(4rem, 15vw, 10rem)', marginTop: '0', color: 'var(--text-color)', lineHeight: 0.9 }}>
+                <h1 className="hero-title" style={{ marginTop: '0', color: 'var(--text-color)', lineHeight: 0.9 }}>
                     <span style={{ display: 'block', opacity: 0.8 }}>MOHAMMAD</span>
                     <span className="gradient-text" style={{ fontStyle: 'italic' }}>AYOUB</span>
                 </h1>

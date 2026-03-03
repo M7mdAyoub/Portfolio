@@ -16,19 +16,19 @@ export default function About() {
     return (
         <section id="about" ref={containerRef} style={{ position: 'relative' }}>
             <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: '2rem', marginBottom: '4rem' }}>
-                    <motion.h2
-                        initial={{ opacity: 0, x: -100 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        className="brush-text"
-                        style={{ fontSize: '4.5rem', margin: 0 }}
-                    >
-                        About
-                    </motion.h2>
-                    <span style={{ fontSize: '0.9rem', color: 'var(--accent-color)', letterSpacing: '0.2rem' }}>PROFILE</span>
+                <div className="section-header">
+                    <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }}>
+                        <h2 className="brush-text" style={{ fontSize: '4.5rem', margin: 0 }}>
+                            About
+                        </h2>
+                        <div style={{ width: '100px', height: '2px', background: 'var(--accent-color)', marginTop: '1.5rem' }} />
+                    </motion.div>
+                    <div className="section-subtitle">
+                        Profile
+                    </div>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '6rem', alignItems: 'center' }}>
+                <div className="about-grid">
                     <motion.div style={{ y: y1 }}>
                         <h3 style={{ color: 'var(--secondary-color)', marginBottom: '1.5rem', fontSize: '2.2rem' }}>Professional Summary</h3>
                         <p style={{ fontSize: '1.3rem', lineHeight: '2.2', color: 'var(--muted-text)' }}>

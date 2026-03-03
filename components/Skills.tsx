@@ -65,22 +65,20 @@ export default function Skills() {
     return (
         <section id="skills">
             <div className="container">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '4rem' }}>
-                    <motion.h2
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        className="brush-text"
-                        style={{ fontSize: '3.5rem', margin: 0 }}
-                    >
-                        Capabilities
-                    </motion.h2>
-                    <p style={{ maxWidth: '300px', color: 'var(--muted-text)', fontSize: '0.9rem', textAlign: 'right' }}>
-                        A fusion of enterprise engineering and modern web craftsmanship.
-                    </p>
+                <div className="section-header">
+                    <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }}>
+                        <h2 className="brush-text" style={{ fontSize: '4.5rem', margin: 0 }}>
+                            Capabilities
+                        </h2>
+                        <div style={{ width: '100px', height: '2px', background: 'var(--accent-color)', marginTop: '1.5rem' }} />
+                    </motion.div>
+                    <div className="section-subtitle">
+                        Enterprise Engineering
+                    </div>
                 </div>
 
                 <motion.div
-                    className="bento-grid"
+                    className="bento-grid skills-grid"
                     variants={container}
                     initial="hidden"
                     whileInView="show"
@@ -89,18 +87,12 @@ export default function Skills() {
                         <motion.div
                             key={index}
                             variants={item}
-                            className={`bento-item ${skill.span || ''}`}
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'space-between',
-                                gridColumn: skill.span === 'col-span-2' ? 'span 2' : 'span 1'
-                            }}
+                            className={`bento-item skill-bento ${skill.span || ''}`}
                         >
-                            <div style={{ color: 'var(--accent-color)', marginBottom: '1rem' }}>{skill.icon}</div>
-                            <div>
-                                <h4 style={{ fontSize: '1.2rem', marginBottom: '0.2rem' }}>{skill.name}</h4>
-                                <p style={{ fontSize: '0.7rem', color: 'var(--secondary-color)', textTransform: 'uppercase', letterSpacing: '0.1rem' }}>{skill.category}</p>
+                            <div className="skill-icon" style={{ color: 'var(--accent-color)' }}>{skill.icon}</div>
+                            <div className="skill-info">
+                                <h4 className="skill-name">{skill.name}</h4>
+                                <p className="skill-category">{skill.category}</p>
                             </div>
                         </motion.div>
                     ))}

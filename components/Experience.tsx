@@ -42,16 +42,16 @@ export default function Experience() {
     return (
         <section id="experience" ref={containerRef} style={{ position: 'relative' }}>
             <div className="container">
-                <div style={{ marginBottom: '6rem' }}>
-                    <motion.h2
-                        initial={{ opacity: 0, rotateX: 90 }}
-                        whileInView={{ opacity: 1, rotateX: 0 }}
-                        className="brush-text"
-                        style={{ fontSize: '4.5rem', margin: 0 }}
-                    >
-                        Experience
-                    </motion.h2>
-                    <div style={{ width: '100px', height: '2px', background: 'var(--accent-color)', marginTop: '1rem' }} />
+                <div className="section-header">
+                    <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }}>
+                        <h2 className="brush-text" style={{ fontSize: '4.5rem', margin: 0 }}>
+                            Experience
+                        </h2>
+                        <div style={{ width: '100px', height: '2px', background: 'var(--accent-color)', marginTop: '1.5rem' }} />
+                    </motion.div>
+                    <div className="section-subtitle">
+                        History
+                    </div>
                 </div>
 
                 <div style={{ position: 'relative' }}>

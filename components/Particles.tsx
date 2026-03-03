@@ -22,10 +22,14 @@ export default function Particles() {
     const [elements, setElements] = useState<AtmosphericElement[]>([]);
 
     useEffect(() => {
+        const isMobile = window.innerWidth < 768;
+        const multiplier = isMobile ? 0.3 : 1; // 70% fewer particles on mobile for high FPS
+
         const newElements: AtmosphericElement[] = [];
 
         // 1. Floating Lanterns (Upward) - Reduced for subtlety
-        for (let i = 0; i < 8; i++) {
+        const lanternCount = Math.floor(8 * multiplier);
+        for (let i = 0; i < lanternCount; i++) {
             newElements.push({
                 id: i,
                 type: 'lantern',
@@ -40,7 +44,8 @@ export default function Particles() {
         }
 
         // 2. Falling Sakuras (Downward)
-        for (let i = 20; i < 70; i++) {
+        const sakuraCount = Math.floor(50 * multiplier);
+        for (let i = 20; i < 20 + sakuraCount; i++) {
             newElements.push({
                 id: i,
                 type: 'sakura',
@@ -55,7 +60,8 @@ export default function Particles() {
         }
 
         // 3. Fireflies (Hotaru)
-        for (let i = 70; i < 110; i++) {
+        const fireflyCount = Math.floor(40 * multiplier);
+        for (let i = 70; i < 70 + fireflyCount; i++) {
             newElements.push({
                 id: i,
                 type: 'firefly',

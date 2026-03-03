@@ -154,21 +154,19 @@ export default function Projects() {
     return (
         <section id="projects">
             <div className="container">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '5rem' }}>
-                    <motion.h2
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        className="brush-text"
-                        style={{ fontSize: '4rem', margin: 0 }}
-                    >
-                        Projects
-                    </motion.h2>
-                    <div style={{ textAlign: 'right', fontSize: '0.8rem', color: 'var(--muted-text)', textTransform: 'uppercase', letterSpacing: '0.3rem' }}>
+                <div className="section-header">
+                    <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }}>
+                        <h2 className="brush-text" style={{ fontSize: '4.5rem', margin: 0 }}>
+                            Projects
+                        </h2>
+                        <div style={{ width: '100px', height: '2px', background: 'var(--accent-color)', marginTop: '1.5rem' }} />
+                    </motion.div>
+                    <div className="section-subtitle">
                         Development Showcases
                     </div>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
                     {projects.map((proj, index) => (
                         <motion.div
                             key={index}
@@ -293,6 +291,8 @@ export default function Projects() {
                                 padding: '1.2rem 2rem',
                                 borderBottom: '1px solid var(--border-color)',
                                 background: 'rgba(0,0,0,0.3)',
+                                flexWrap: 'wrap',
+                                gap: '1rem',
                             }}>
                                 <div>
                                     <h3 style={{ fontSize: '1.5rem', color: 'var(--secondary-color)', margin: 0 }}>

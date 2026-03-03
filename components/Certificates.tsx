@@ -15,7 +15,18 @@ const certificates = [
 
 export default function Certificates() {
     const [index, setIndex] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const offsetStep = isMobile ? 260 : 350;
+    const cardWidth = isMobile ? 310 : 400;
 
     const next = () => {
         setIndex((prev) => (prev + 1) % certificates.length);
@@ -29,22 +40,22 @@ export default function Certificates() {
         <section id="certificates" style={{ position: 'relative', overflow: 'hidden', padding: '10rem 0' }}>
             <div className="container" style={{ position: 'relative', zIndex: 10 }}>
                 {/* Header */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '5rem', padding: '0 5%' }}>
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                    >
+                <div className="section-header">
+                    <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }}>
                         <h2 className="brush-text" style={{ fontSize: '4.5rem', margin: 0 }}>
                             Credentials
                         </h2>
-                        <div style={{ color: 'var(--accent-color)', letterSpacing: '0.4rem', fontSize: '0.8rem', marginTop: '0.5rem' }}>
-                            PROFESSIONAL ACHIEVEMENTS
-                        </div>
+                        <div style={{ width: '100px', height: '2px', background: 'var(--accent-color)', marginTop: '1.5rem' }} />
                     </motion.div>
 
-                    <div style={{ display: 'flex', gap: '1rem' }}>
-                        <button onClick={prev} style={navBtnStyle}><ChevronLeft size={24} /></button>
-                        <button onClick={next} style={navBtnStyle}><ChevronRight size={24} /></button>
+                    <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+                        <div className="section-subtitle" style={{ margin: 0, textAlign: 'right', display: isMobile ? 'none' : 'block' }}>
+                            Professional Achievements
+                        </div>
+                        <div style={{ display: 'flex', gap: '1rem' }}>
+                            <button onClick={prev} style={navBtnStyle}><ChevronLeft size={24} /></button>
+                            <button onClick={next} style={navBtnStyle}><ChevronRight size={24} /></button>
+                        </div>
                     </div>
                 </div>
 
@@ -74,16 +85,16 @@ export default function Certificates() {
                                 key={i}
                                 initial={false}
                                 animate={{
-                                    x: displayOffset * 350,
+                                    x: displayOffset * offsetStep,
                                     scale: isCenter ? 1 : 0.8,
-                                    rotateY: displayOffset * -30,
+                                    rotateY: displayOffset * (isMobile ? -15 : -30),
                                     z: isCenter ? 0 : -200,
                                     opacity: Math.abs(displayOffset) > 2 ? 0 : 1 - Math.abs(displayOffset) * 0.3,
                                 }}
                                 transition={{ type: 'spring', damping: 20, stiffness: 100 }}
                                 style={{
                                     position: 'absolute',
-                                    width: '400px',
+                                    width: `${cardWidth}px`,
                                     background: 'rgba(255, 255, 255, 0.03)',
                                     backdropFilter: 'blur(10px)',
                                     borderRadius: '24px',
@@ -91,9 +102,24 @@ export default function Certificates() {
                                     padding: '1.5rem',
                                     boxShadow: isCenter ? '0 20px 60px rgba(188, 24, 35, 0.2)' : 'none',
                                     zIndex: isCenter ? 10 : 1,
-                                    cursor: isCenter ? 'default' : 'pointer'
+                                    cursor: isCenter ? 'grab' : 'pointer'
                                 }}
-                                onClick={() => setIndex(i)}
+                                onClick={() => !isCenter && setIndex(i)}
+                                drag={isCenter ? "x" : false}
+                                dragConstraints={{ left: 0, right: 0 }}
+                                dragElastic={0.2}
+                                onDragEnd={(e, { offset, velocity }) => {
+                                    const swipe = Math.abs(offset.x) * velocity.x;
+                                    if (swipe < -1000) {
+                                        next();
+                                    } else if (swipe > 1000) {
+                                        prev();
+                                    } else if (offset.x < -50) {
+                                        next();
+                                    } else if (offset.x > 50) {
+                                        prev();
+                                    }
+                                }}
                             >
                                 <div style={{
                                     width: '100%',

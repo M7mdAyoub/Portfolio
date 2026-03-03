@@ -137,20 +137,22 @@ section {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .bento-grid {
     grid-template-columns: 1fr;
+  }
+
+  .bento-item {
+    grid-column: span 1 !important;
+  }
+
+  .col-span-2 {
+    grid-column: span 1 !important;
   }
 }
 
 .col-span-2 {
   grid-column: span 2;
-}
-
-@media (max-width: 640px) {
-  .col-span-2 {
-    grid-column: span 1;
-  }
 }
 
 @media (max-width: 768px) {
@@ -179,4 +181,200 @@ section {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Responsive Typography and Utilities */
+.hero-title {
+  font-size: clamp(3.5rem, 12vw, 10rem);
+}
+
+.hero-subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 0.6rem;
+}
+
+.hero-divider {
+  display: block !important;
+}
+
+.section-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-end !important;
+  margin-bottom: 5rem !important;
+  width: 100%;
+}
+
+.section-subtitle {
+  text-align: right;
+  font-size: 0.8rem;
+  color: var(--muted-text);
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  max-width: 300px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* Base Component Styles */
+.main-navbar {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background-color: rgba(12, 12, 12, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  padding: 0.8rem 2.5rem;
+  border-radius: 50px;
+  display: flex;
+  gap: 2.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: none;
+    /* Free scrolling on mobile, fixes glitchy touch snap */
+  }
+
+  body {
+    overflow-x: hidden;
+    /* Force strict boundary */
+  }
+
+  section {
+    min-height: auto;
+    padding: 5rem 5% !important;
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+
+  .brush-text {
+    font-size: 3rem !important;
+  }
+
+  .kanji-bg {
+    font-size: 8rem !important;
+    right: 0 !important;
+  }
+
+  /* Hero fixes */
+  .hero-title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 0.3rem;
+    text-align: center;
+  }
+
+  .hero-divider {
+    display: none !important;
+  }
+
+  /* Bento and container adjustments */
+  .bento-item {
+    padding: 1.5rem !important;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  h3 {
+    font-size: 1.6rem !important;
+  }
+
+  p {
+    font-size: 1rem !important;
+  }
+
+  /* Section Header mobile stacking */
+  .section-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem !important;
+  }
+
+  .section-subtitle {
+    text-align: left !important;
+  }
+
+
+  .main-navbar {
+    display: none !important;
+  }
+
+  /* Compact wrapping skills cloud on mobile */
+  .skills-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.8rem !important;
+  }
+
+  .skill-bento {
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 0.8rem 1.2rem !important;
+    gap: 0.8rem !important;
+    border-radius: 50px !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+  }
+
+  .skill-icon {
+    margin-bottom: 0 !important;
+    transform: scale(0.85);
+  }
+
+  .skill-name {
+    font-size: 0.95rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  .skill-category {
+    display: none !important;
+  }
+}
+
+/* Skills Base Styling (Restoring deleted inline styles for desktop) */
+.skill-bento {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.skill-icon {
+  margin-bottom: 1rem;
+}
+
+.skill-name {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.skill-category {
+  font-size: 0.7rem;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
