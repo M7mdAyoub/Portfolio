@@ -34,22 +34,19 @@ function AnimatedSection({ children, id }: { children: React.ReactNode, id?: str
 }
 
 export default function Page() {
-    // Strict Full-Page Scroll Interceptor (Presentation Mode)
+    // Smart Scroll System: snaps for short sections, free-scrolls for tall ones
     useEffect(() => {
         let isScrolling = false;
         let timeoutId: NodeJS.Timeout;
+        const EDGE_THRESHOLD = 50; // px tolerance for "at the edge"
 
         const handleWheel = (e: WheelEvent) => {
             // Ignore horizontal scrolls (like swiping through the certificate carousel)
             if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
 
-            e.preventDefault();
-
-            if (isScrolling) return;
-            isScrolling = true;
-
             const direction = e.deltaY > 0 ? 1 : -1;
             const snapItems = Array.from(document.querySelectorAll('.snap-target'));
+            const viewportHeight = window.innerHeight;
 
             // Find currently visible section
             let currentIdx = 0;
@@ -63,17 +60,44 @@ export default function Page() {
                 }
             });
 
+            const currentEl = snapItems[currentIdx];
+            const rect = currentEl.getBoundingClientRect();
+            const sectionHeight = rect.height;
+            const fitsInViewport = sectionHeight <= viewportHeight + EDGE_THRESHOLD;
+
+            // If the section is taller than the viewport, allow free scrolling
+            // until the user reaches the edge
+            if (!fitsInViewport) {
+                const atTop = rect.top >= -EDGE_THRESHOLD;
+                const atBottom = rect.bottom <= viewportHeight + EDGE_THRESHOLD;
+
+                // Scrolling down but haven't reached the bottom of this section yet
+                if (direction > 0 && !atBottom) return;
+                // Scrolling up but haven't reached the top of this section yet
+                if (direction < 0 && !atTop) return;
+            }
+
+            // At this point we want to snap — prevent default and animate
+            e.preventDefault();
+
+            if (isScrolling) return;
+            isScrolling = true;
+
             // Calculate next section
             const nextIdx = Math.max(0, Math.min(currentIdx + direction, snapItems.length - 1));
+            if (nextIdx === currentIdx) {
+                isScrolling = false;
+                return;
+            }
 
             // Custom Fluid "Japanese Theme" Scroll Animation
             const startY = window.scrollY;
             const targetY = snapItems[nextIdx].getBoundingClientRect().top + startY;
             const distance = targetY - startY;
-            const duration = 350; // Blazing fast and responsive 0.35s scroll
+            const duration = 400;
             let startTime: number | null = null;
 
-            // Easing function: easeOutQuint (Instantly fast response, buttery smooth long deceleration)
+            // Easing function: easeOutQuint
             const easeOutQuint = (t: number) => 1 - Math.pow(1 - t, 5);
 
             const animation = (currentTime: number) => {
@@ -94,7 +118,7 @@ export default function Page() {
             // Cooldown to prevent multiple sections scrolling
             timeoutId = setTimeout(() => {
                 isScrolling = false;
-            }, duration + 50);
+            }, duration + 100);
         };
 
         window.addEventListener('wheel', handleWheel, { passive: false });
