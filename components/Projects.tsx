@@ -48,6 +48,7 @@ const projects: Project[] = [
         tag: "Full-Stack Web",
         thumbnail: "/chickanji/portfolio_home_1772438436394.png",
         repo: "https://github.com/M7mdAyoub/chickanji",
+        link: "http://chickanji.infinityfree.me",
         gallery: [
             "/chickanji/portfolio_home_1772438436394.png",
             "/chickanji/portfolio_menu_1772438431068.png",
