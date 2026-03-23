@@ -5,23 +5,23 @@ import Window from "./Window";
 import { WINDOW_DATA } from "./WindowsDesktop";
 
 interface WindowManagerProps {
-  focusStack: string[];
-  minimized: string[];
-  maximized: string[];
-  onClose: (id: string) => void;
-  onFocus: (id: string) => void;
-  onMinimize: (id: string) => void;
-  onMaximize: (id: string) => void;
+  focusStack?: string[];
+  minimized?: string[];
+  maximized?: string[];
+  onClose?: (id: string) => void;
+  onFocus?: (id: string) => void;
+  onMinimize?: (id: string) => void;
+  onMaximize?: (id: string) => void;
 }
 
 export default function WindowManager({ 
-  focusStack, 
-  minimized, 
-  maximized, 
-  onClose, 
-  onFocus, 
-  onMinimize, 
-  onMaximize 
+  focusStack = [], 
+  minimized = [], 
+  maximized = [], 
+  onClose = () => {}, 
+  onFocus = () => {}, 
+  onMinimize = () => {}, 
+  onMaximize = () => {} 
 }: WindowManagerProps) {
   const isAltTabbing = false; // Placeholder for future alt-tab logic if needed
 
