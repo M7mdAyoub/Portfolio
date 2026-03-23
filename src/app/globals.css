@@ -1,0 +1,113 @@
+:root {
+  --bg-color: #272822;
+  --text-color: #F8F8F2;
+  --keyword-color: #F92672;
+  --string-color: #E6DB74;
+  --func-color: #A6E22E;
+  --comment-color: #75715E;
+  --selection-color: #49483E;
+  
+  --ide-bg: #1e1e1e;
+  --sidebar-bg: #252526;
+  --terminal-bg: #1e1e1e;
+  --bezel-color: #000000;
+  --border-color: #3e3e42;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html,
+body {
+  background-color: #05050a;
+  color: var(--text-color);
+  font-family: var(--font-jetbrains-mono), monospace;
+  overflow-x: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #05050a;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.5);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Gradient Orb Animations ── */
+@keyframes float-orb-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(80px, -60px) scale(1.1); }
+  50% { transform: translate(-40px, 40px) scale(0.95); }
+  75% { transform: translate(60px, 80px) scale(1.05); }
+}
+@keyframes float-orb-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-70px, 50px) scale(1.08); }
+  50% { transform: translate(50px, -70px) scale(0.92); }
+  75% { transform: translate(-30px, -40px) scale(1.02); }
+}
+@keyframes float-orb-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(60px, 60px) scale(1.15); }
+  66% { transform: translate(-80px, -30px) scale(0.9); }
+}
+@keyframes float-orb-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(-50px, -80px) scale(1.1); }
+  60% { transform: translate(70px, 30px) scale(0.95); }
+  80% { transform: translate(-20px, 60px) scale(1.05); }
+}
+@keyframes float-orb-5 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40% { transform: translate(40px, -50px) scale(1.12); }
+  70% { transform: translate(-60px, 40px) scale(0.88); }
+}
+
+/* ── Scroll Indicator ── */
+@keyframes scroll-line {
+  0% { transform: scaleY(0); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+@keyframes bounce-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* ── Tagline Fade ── */
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Stat Counter Pulse ── */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.15); }
+  50% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.3); }
+}
+
+/* ── Infinite Marquee ── */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
