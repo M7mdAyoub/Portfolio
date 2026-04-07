@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  Wifi, Battery, Signal, User, FolderArchive, Briefcase, Award, Mail, 
+import {
+  Wifi, Battery, Signal, User, FolderArchive, Briefcase, Award, Mail,
   Github, Linkedin, ChevronLeft, Smartphone, Globe, Database, MapPin
 } from "lucide-react";
 
@@ -104,7 +104,7 @@ function MobileContactForm() {
       <div style={{ textAlign: "center", marginBottom: "10px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "white" }}>Get in Touch</h2>
         <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "12px", marginTop: "5px" }}>
-          Message <strong style={{color:"#8b5cf6"}}>mrm7md091@gmail.com</strong>
+          Message <strong style={{ color: "#8b5cf6" }}>mrm7md091@gmail.com</strong>
         </p>
       </div>
 
@@ -113,7 +113,7 @@ function MobileContactForm() {
         <input type="text" name="name" placeholder="Name" required style={{ padding: "12px", borderRadius: "8px", backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", color: "white" }} />
         <input type="email" name="email" placeholder="Email" required style={{ padding: "12px", borderRadius: "8px", backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", color: "white" }} />
         <textarea name="message" placeholder="Message" rows={5} required style={{ padding: "12px", borderRadius: "8px", backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", color: "white", resize: "none" }} />
-        
+
         {status === "success" && (
           <div style={{ padding: "12px", backgroundColor: "rgba(16, 185, 129, 0.1)", border: "1px solid rgba(16, 185, 129, 0.3)", borderRadius: "8px", color: "#10b981", fontSize: "13px", textAlign: "center" }}>
             Sent successfully!
@@ -126,8 +126,8 @@ function MobileContactForm() {
           </div>
         )}
 
-        <button 
-          type="submit" 
+        <button
+          type="submit"
           disabled={status === "submitting"}
           style={{ padding: "14px", borderRadius: "8px", backgroundColor: "#8b5cf6", border: "none", color: "white", fontWeight: 700, fontSize: "14px", opacity: status === "submitting" ? 0.7 : 1 }}
         >
@@ -165,7 +165,7 @@ export default function MobileOS({ onExit }: { onExit: () => void }) {
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100%", overflow: "hidden", backgroundColor: "#020202", fontFamily: "var(--font-inter), sans-serif" }}>
-      
+
       {/* ── Background Wallpaper ── */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <div style={{ position: "absolute", top: "0%", left: "0%", width: "150vw", height: "150vw", background: "radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 60%)", filter: "blur(60px)", transform: "translate(-20%, -20%)" }} />
@@ -185,12 +185,12 @@ export default function MobileOS({ onExit }: { onExit: () => void }) {
 
       {/* ── Home Screen ── */}
       <div style={{ position: "relative", zIndex: 10, height: "100%", display: "flex", flexDirection: "column", paddingTop: "80px", paddingBottom: "20px" }}>
-        
+
         {/* App Grid */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "25px 0", padding: "0 20px" }}>
           {apps.map((app) => (
-            <motion.div 
-              key={app.id} 
+            <motion.div
+              key={app.id}
               onClick={() => handleAppOpen(app.id)}
               whileTap={{ scale: 0.9 }}
               style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "6px", cursor: "pointer" }}
@@ -219,15 +219,15 @@ export default function MobileOS({ onExit }: { onExit: () => void }) {
 
         {/* Dock */}
         <div style={{ margin: "0 20px", padding: "18px", backgroundColor: "rgba(255,255,255,0.15)", backdropFilter: "blur(40px)", borderRadius: "30px", display: "flex", justifyContent: "space-between", alignItems: "center", border: "1px solid rgba(255,255,255,0.1)" }}>
-           <a href="https://github.com/Mohammad-Ayoub" target="_blank" rel="noreferrer" style={{ width: "55px", height: "55px", backgroundColor: "rgba(0,0,0,0.5)", borderRadius: "14px", display: "flex", alignItems: "center", justifyContent: "center", color: "white", textDecoration: "none" }}>
-             <Github size={28} />
-           </a>
-           <a href="https://www.linkedin.com/in/mohammad-ayoub091/" target="_blank" rel="noreferrer" style={{ width: "55px", height: "55px", backgroundColor: "#0a66c2", borderRadius: "14px", display: "flex", alignItems: "center", justifyContent: "center", color: "white", textDecoration: "none" }}>
-             <Linkedin size={28} />
-           </a>
-           <div onClick={() => handleAppOpen('contact')} style={{ width: "55px", height: "55px", backgroundColor: "#8b5cf6", borderRadius: "14px", display: "flex", alignItems: "center", justifyContent: "center", color: "white", cursor: "pointer" }}>
-             <Mail size={28} />
-           </div>
+          <a href="https://github.com/M7mdAyoub" target="_blank" rel="noreferrer" style={{ width: "55px", height: "55px", backgroundColor: "rgba(0,0,0,0.5)", borderRadius: "14px", display: "flex", alignItems: "center", justifyContent: "center", color: "white", textDecoration: "none" }}>
+            <Github size={28} />
+          </a>
+          <a href="https://www.linkedin.com/in/mohammad-ayoub091/" target="_blank" rel="noreferrer" style={{ width: "55px", height: "55px", backgroundColor: "#0a66c2", borderRadius: "14px", display: "flex", alignItems: "center", justifyContent: "center", color: "white", textDecoration: "none" }}>
+            <Linkedin size={28} />
+          </a>
+          <div onClick={() => handleAppOpen('contact')} style={{ width: "55px", height: "55px", backgroundColor: "#8b5cf6", borderRadius: "14px", display: "flex", alignItems: "center", justifyContent: "center", color: "white", cursor: "pointer" }}>
+            <Mail size={28} />
+          </div>
         </div>
       </div>
 
@@ -247,7 +247,7 @@ export default function MobileOS({ onExit }: { onExit: () => void }) {
           >
             {/* App Header */}
             <div style={{ paddingTop: "60px", paddingBottom: "15px", paddingLeft: "15px", paddingRight: "15px", display: "flex", alignItems: "center", borderBottom: "1px solid rgba(255,255,255,0.05)", backgroundColor: "rgba(13,13,21,0.95)", backdropFilter: "blur(20px)" }}>
-              <button 
+              <button
                 onClick={() => {
                   if (activeApp.startsWith("project_")) setActiveApp("projects");
                   else if (activeApp.startsWith("cert_")) setActiveApp("certs");
@@ -258,13 +258,13 @@ export default function MobileOS({ onExit }: { onExit: () => void }) {
                 <ChevronLeft size={24} /> Back
               </button>
               <div style={{ flex: 1, textAlign: "center", color: "white", fontWeight: 700, fontSize: "16px", paddingRight: "40px" }}>
-                 {activeApp.startsWith("project_") ? "Project Details" : (activeApp.startsWith("cert_") ? "Credential" : (apps.find(a => a.id === activeApp)?.name || "App"))}
+                {activeApp.startsWith("project_") ? "Project Details" : (activeApp.startsWith("cert_") ? "Credential" : (apps.find(a => a.id === activeApp)?.name || "App"))}
               </div>
             </div>
 
             {/* App Content Area */}
             <div style={{ flex: 1, overflowY: "auto", padding: "20px", color: "white", paddingBottom: "50px" }}>
-              
+
               {/* About App */}
               {activeApp === "about" && (
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
@@ -275,11 +275,11 @@ export default function MobileOS({ onExit }: { onExit: () => void }) {
                   </div>
                   <h1 style={{ fontSize: "28px", fontWeight: 800 }}>Mohammad Ayoub</h1>
                   <div style={{ color: "#06b6d4", fontSize: "14px", fontWeight: 600, margin: "8px 0 20px 0", letterSpacing: "1px" }}>COMPUTER SCIENCE • HTU</div>
-                  
+
                   <p style={{ fontSize: "15px", lineHeight: "1.7", color: "rgba(255,255,255,0.8)", marginBottom: "40px" }}>
                     Versatile developer with hands-on experience in full-stack engineering and mobile systems. Committed to building efficient, scalable software from the ground up.
                   </p>
-                  
+
                   <div style={{ width: "100%", textAlign: "left" }}>
                     <h3 style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "15px", fontWeight: 700 }}>Technical Capabilities</h3>
                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
@@ -303,8 +303,8 @@ export default function MobileOS({ onExit }: { onExit: () => void }) {
                     { id: "project_naturedesk", name: "NatureDesk", tech: "ASP.NET Core", icon: <Briefcase color="#8b5cf6" /> },
                     { id: "project_chickanji", name: "Chickanji", tech: "PHP / JS", icon: <Globe color="#f59e0b" /> },
                   ].map((p) => (
-                    <motion.div 
-                      key={p.id} 
+                    <motion.div
+                      key={p.id}
                       onClick={() => handleAppOpen(p.id)}
                       whileTap={{ scale: 0.98, backgroundColor: "rgba(255,255,255,0.1)" }}
                       style={{ backgroundColor: "rgba(255,255,255,0.04)", padding: "18px", borderRadius: "16px", display: "flex", alignItems: "center", gap: "18px", border: "1px solid rgba(255,255,255,0.05)" }}
@@ -326,20 +326,20 @@ export default function MobileOS({ onExit }: { onExit: () => void }) {
               {activeApp.startsWith("project_") && (
                 <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
                   <div style={{ width: "100%", aspectRatio: "1.2", backgroundColor: "#000", borderRadius: "16px", overflow: "hidden", position: "relative", marginBottom: "25px", boxShadow: "0 10px 30px rgba(0,0,0,0.5)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                     <img src={PROJECT_GALLERIES[activeApp].images[slideIndex]} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
-                     
-                     <div style={{ position: "absolute", bottom: "15px", width: "100%", display: "flex", justifyContent: "center", gap: "25px" }}>
-                       <button onClick={() => setSlideIndex((p) => Math.max(0, p - 1))} style={{ background: "rgba(0,0,0,0.7)", border: "none", color: "white", padding: "8px 15px", borderRadius: "8px", fontWeight: 600 }}>Prev</button>
-                       <button onClick={() => setSlideIndex((p) => Math.min(PROJECT_GALLERIES[activeApp].images.length - 1, p + 1))} style={{ background: "rgba(0,0,0,0.7)", border: "none", color: "white", padding: "8px 15px", borderRadius: "8px", fontWeight: 600 }}>Next</button>
-                     </div>
-                     <div style={{ position: "absolute", top: "15px", right: "15px", backgroundColor: "rgba(0,0,0,0.6)", padding: "4px 8px", borderRadius: "6px", fontSize: "11px" }}>
-                        {slideIndex + 1} / {PROJECT_GALLERIES[activeApp].images.length}
-                     </div>
+                    <img src={PROJECT_GALLERIES[activeApp].images[slideIndex]} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+
+                    <div style={{ position: "absolute", bottom: "15px", width: "100%", display: "flex", justifyContent: "center", gap: "25px" }}>
+                      <button onClick={() => setSlideIndex((p) => Math.max(0, p - 1))} style={{ background: "rgba(0,0,0,0.7)", border: "none", color: "white", padding: "8px 15px", borderRadius: "8px", fontWeight: 600 }}>Prev</button>
+                      <button onClick={() => setSlideIndex((p) => Math.min(PROJECT_GALLERIES[activeApp].images.length - 1, p + 1))} style={{ background: "rgba(0,0,0,0.7)", border: "none", color: "white", padding: "8px 15px", borderRadius: "8px", fontWeight: 600 }}>Next</button>
+                    </div>
+                    <div style={{ position: "absolute", top: "15px", right: "15px", backgroundColor: "rgba(0,0,0,0.6)", padding: "4px 8px", borderRadius: "6px", fontSize: "11px" }}>
+                      {slideIndex + 1} / {PROJECT_GALLERIES[activeApp].images.length}
+                    </div>
                   </div>
-                  
+
                   <h2 style={{ fontSize: "24px", fontWeight: 800 }}>{PROJECT_GALLERIES[activeApp].title}</h2>
                   <div style={{ color: "#8b5cf6", fontSize: "13px", fontWeight: 600, marginTop: "6px", letterSpacing: "1px" }}>{PROJECT_GALLERIES[activeApp].tech}</div>
-                  
+
                   <p style={{ color: "rgba(255,255,255,0.8)", marginTop: "20px", lineHeight: "1.7", fontSize: "15px" }}>
                     {PROJECT_GALLERIES[activeApp].labels?.[slideIndex] || "Overview"} — {PROJECT_GALLERIES[activeApp].desc}
                   </p>
@@ -393,8 +393,8 @@ export default function MobileOS({ onExit }: { onExit: () => void }) {
                     { id: "python_mid", name: "Intermediate Python", issuer: "DataCamp", icon: "🐍" },
                     { id: "python_intro", name: "Introduction to Python", issuer: "DataCamp", icon: "🚀" },
                   ].map((cert, i) => (
-                    <motion.div 
-                      key={i} 
+                    <motion.div
+                      key={i}
                       onClick={() => handleAppOpen("cert_" + cert.id)}
                       whileTap={{ scale: 0.98 }}
                       style={{ backgroundColor: "rgba(255,255,255,0.04)", padding: "18px", borderRadius: "14px", fontSize: "14px", display: "flex", alignItems: "center", gap: "15px", border: "1px solid rgba(255,255,255,0.05)" }}
@@ -414,10 +414,10 @@ export default function MobileOS({ onExit }: { onExit: () => void }) {
               {activeApp.startsWith("cert_") && (
                 <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
                   <div style={{ flex: 1, backgroundColor: "#000", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", marginBottom: "20px" }}>
-                     <img 
-                      src={activeApp === "cert_redhat" ? "/certificates/redhat.png" : (activeApp === "cert_vatrenas" ? "/certificates/vatrenas.jpg" : `/certificates/${activeApp.replace('cert_', '')}.png`)} 
-                      style={{ width: "100%", height: "100%", objectFit: "contain" }} 
-                     />
+                    <img
+                      src={activeApp === "cert_redhat" ? "/certificates/redhat.png" : (activeApp === "cert_vatrenas" ? "/certificates/vatrenas.jpg" : `/certificates/${activeApp.replace('cert_', '')}.png`)}
+                      style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                    />
                   </div>
                   <div style={{ textAlign: "center" }}>
                     <h2 style={{ fontSize: "18px", fontWeight: 700 }}>Verified Credential</h2>
