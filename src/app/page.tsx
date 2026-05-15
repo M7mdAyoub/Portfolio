@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react";
 import HeroIntro from "@/components/HeroIntro";
-import LaptopFrame from "@/components/LaptopFrame";
-import SmartphoneFrame from "@/components/SmartphoneFrame";
+import dynamic from "next/dynamic";
+
+const LaptopFrame = dynamic(() => import("@/components/LaptopFrame"), { ssr: false });
+const SmartphoneFrame = dynamic(() => import("@/components/SmartphoneFrame"), { ssr: false });
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState<boolean | null>(null);

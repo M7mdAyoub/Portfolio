@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Wifi, Battery, Signal, User, FolderArchive, Briefcase, Award, Mail,
@@ -275,8 +276,8 @@ export default function MobileOS({ onExit }: { onExit: () => void }) {
               {activeApp === "about" && (
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
                   <div style={{ width: "120px", height: "120px", borderRadius: "50%", background: "linear-gradient(135deg, #ec4899, #8b5cf6)", marginBottom: "20px", padding: "3px", boxShadow: "0 10px 30px rgba(0,0,0,0.5)" }}>
-                    <div style={{ width: "100%", height: "100%", borderRadius: "50%", overflow: "hidden", backgroundColor: "#000" }}>
-                      <img src="/assets/MohammadAyoub.png" alt="Profile" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    <div style={{ width: "100%", height: "100%", borderRadius: "50%", overflow: "hidden", backgroundColor: "#000", position: "relative" }}>
+                      <Image src="/assets/MohammadAyoub.png" alt="Profile" fill sizes="120px" style={{ objectFit: "cover" }} priority />
                     </div>
                   </div>
                   <h1 style={{ fontSize: "28px", fontWeight: 800 }}>Mohammad Ayoub</h1>

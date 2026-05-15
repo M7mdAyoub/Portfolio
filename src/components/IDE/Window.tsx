@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { Rnd } from "react-rnd";
 import { motion, AnimatePresence } from "framer-motion";
 import { Minus, Square, X, FolderArchive, User, MapPin, Briefcase, Smartphone, Globe, Database, ChevronLeft, ChevronRight, Award, ShieldCheck, Cpu, Layers, Layout, Terminal, Server, Zap, Search, GitBranch, Box, FileCode, Palette, Flame, Cloud, Mail, Linkedin, Github } from "lucide-react";
@@ -273,9 +274,8 @@ export default function Window({
               {/* User Profile OS App */}
               {id === 'about' && (
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", paddingTop: "20px", height: "100%" }}>
-                  <div style={{ width: "100px", height: "100px", borderRadius: "50%", background: "linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px", boxShadow: "0 10px 20px rgba(0,0,0,0.5)", border: "2px solid rgba(255,255,255,0.2)", overflow: "hidden" }}>
-                    <img src="/assets/MohammadAyoub.png" alt="Mohammad Ayoub" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                    <User size={50} color="white" />
+                  <div style={{ width: "100px", height: "100px", borderRadius: "50%", background: "linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px", boxShadow: "0 10px 20px rgba(0,0,0,0.5)", border: "2px solid rgba(255,255,255,0.2)", overflow: "hidden", position: "relative" }}>
+                    <Image src="/assets/MohammadAyoub.png" alt="Mohammad Ayoub" fill sizes="100px" style={{ objectFit: "cover" }} priority />
                   </div>
                   <h1 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "5px" }}>Mohammad Ayoub</h1>
                   <div style={{ color: "#06b6d4", fontSize: "14px", marginBottom: "20px", letterSpacing: "1px", textTransform: "uppercase" }}>B.Sc. Computer Science • HTU 2026</div>

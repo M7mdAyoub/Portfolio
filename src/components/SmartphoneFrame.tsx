@@ -3,7 +3,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import MobileLockScreen from "./IDE/MobileLockScreen";
-import MobileOS from "./IDE/MobileOS";
+import dynamic from "next/dynamic";
+
+const MobileOS = dynamic(() => import("./IDE/MobileOS"), { ssr: false });
 
 export default function SmartphoneFrame() {
   const [isInside, setIsInside] = useState(false);

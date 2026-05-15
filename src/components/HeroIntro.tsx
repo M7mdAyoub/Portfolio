@@ -26,10 +26,29 @@ export default function HeroIntro() {
 
   // Cycle taglines
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTaglineIndex((prev) => (prev + 1) % taglines.length);
-    }, 3000);
-    return () => clearInterval(interval);
+    let interval: NodeJS.Timeout;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          interval = setInterval(() => {
+            setTaglineIndex((prev) => (prev + 1) % taglines.length);
+          }, 3000);
+        } else {
+          clearInterval(interval);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      clearInterval(interval);
+      observer.disconnect();
+    };
   }, []);
 
   // Mouse parallax
