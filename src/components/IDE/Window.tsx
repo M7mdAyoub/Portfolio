@@ -8,24 +8,30 @@ import { Minus, Square, X, FolderArchive, User, MapPin, Briefcase, Smartphone, G
 const ALL_SKILLS = [
   { name: "C# / ASP.NET Core", category: "Backend Framework" },
   { name: "JavaScript", category: "Core Language" },
+  { name: "TypeScript", category: "Core Language" },
   { name: "Node.js / Express", category: "Backend Runtime" },
   { name: "Next.js", category: "Modern Frontend" },
   { name: "HTML / CSS", category: "Web Foundations" },
   { name: "Flutter", category: "Mobile UX" },
-  { name: "Firebase", category: "BaaS / Auth" },
-  { name: "C", category: "Systems Programming" },
+  { name: "Dart", category: "Mobile" },
   { name: "Python", category: "Scripting / AI" },
-  { name: "SQL Server", category: "Database" },
-  { name: "PHP / XAMPP", category: "Classic Web Stack" },
-  { name: "Odoo ERP", category: "Enterprise" },
-  { name: "GitHub", category: "Version Control" },
-  { name: "Docker", category: "Containerization" },
-  { name: "Bootstrap", category: "UI Framework" },
-  { name: "Redis", category: "Caching" },
-  { name: "Elasticsearch", category: "Search Tech" },
-  { name: "Red Hat", category: "System Admin" },
+  { name: "FastAPI", category: "Backend Framework" },
   { name: "Ruby on Rails", category: "Backend Framework" },
-  { name: "Cloud Computing", category: "Infrastructure" },
+  { name: "C", category: "Systems Programming" },
+  { name: "RESTful APIs", category: "Architecture" },
+  { name: "SQL Server", category: "Database" },
+  { name: "PostgreSQL", category: "Database" },
+  { name: "Linux", category: "System Admin" },
+  { name: "Docker", category: "Containerization" },
+  { name: "CI/CD", category: "DevOps" },
+  { name: "GitHub", category: "Version Control" },
+  { name: "Power BI", category: "Data Analytics" },
+  { name: "Excel", category: "Data Analytics" },
+  { name: "Pandas / NumPy", category: "Data Science" },
+  { name: "RSpec", category: "Testing" },
+  { name: "Unit Testing", category: "Testing" },
+  { name: "Zapier", category: "Automation" },
+  { name: "Agile/Scrum", category: "Methodology" },
 ];
 
 const PROJECT_GALLERIES: Record<string, { images: string[], labels?: string[] }> = {
@@ -102,7 +108,7 @@ function ContactForm() {
       <div style={{ textAlign: "center", marginBottom: "25px" }}>
         <h2 style={{ fontSize: "24px", fontWeight: 600, color: "white", marginBottom: "8px" }}>Get in Touch</h2>
         <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "14px" }}>
-          Send a message directly to <strong style={{ color: "#8b5cf6" }}>mrm7md091@gmail.com</strong>
+          Send a message directly to <strong style={{ color: "#8b5cf6" }}>mhmd-ayoub@outlook.com</strong>
         </p>
       </div>
 
@@ -272,13 +278,10 @@ export default function Window({
                     <User size={50} color="white" />
                   </div>
                   <h1 style={{ fontSize: "28px", fontWeight: 600, marginBottom: "5px" }}>Mohammad Ayoub</h1>
-                  <div style={{ color: "#06b6d4", fontSize: "14px", marginBottom: "20px", letterSpacing: "1px", textTransform: "uppercase" }}>Computer Science Graduate • HTU</div>
+                  <div style={{ color: "#06b6d4", fontSize: "14px", marginBottom: "20px", letterSpacing: "1px", textTransform: "uppercase" }}>B.Sc. Computer Science • HTU 2026</div>
 
                   <p style={{ maxWidth: "550px", lineHeight: "1.6", color: "rgba(255,255,255,0.8)", fontSize: "15px" }}>
-                    A versatile computer science graduate with hands-on experience across <strong>full-stack development</strong>,
-                    <strong> mobile applications</strong>, and <strong>systems engineering</strong>.
-                    Always eager to explore new technologies and tackle any challenge that comes my way —
-                    from building databases from scratch in C to shipping enterprise web apps designed for scale.
+                    Junior Software Engineer and Data Analyst with 1+ year of production experience across full-stack web and mobile development, data analytics, and MEL frameworks. Proficient in building distributed backend systems (Ruby on Rails, PostgreSQL, Redis), cross-platform mobile apps (Flutter), and cloud-containerized deployments (Docker, Linux). Hands-on experience designing Theory of Change (ToC) architectures, Power BI dashboards, and automated data pipelines using Zapier and Python. Experienced in multilingual AI-powered search pipelines, financial data integrity, ERP integration (Odoo), and resolving complex production issues across the full stack. Comfortable working across the full product lifecycle from database design to front-end delivery and program monitoring.
                   </p>
 
                   <div style={{ padding: "0 20px", marginTop: "40px", width: "100%" }}>
@@ -300,7 +303,7 @@ export default function Window({
                     >
                       <Mail size={16} /> Email
                     </div>
-                    <a href="https://www.linkedin.com/in/mohammad-ayoub091/" target="_blank" style={{ textDecoration: "none", padding: "10px 24px", backgroundColor: "rgba(255,255,255,0.1)", color: "white", border: "1px solid rgba(255,255,255,0.2)", borderRadius: "20px", fontWeight: 600, cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}><Linkedin size={16} /> LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/mhmd-ayoub/" target="_blank" style={{ textDecoration: "none", padding: "10px 24px", backgroundColor: "rgba(255,255,255,0.1)", color: "white", border: "1px solid rgba(255,255,255,0.2)", borderRadius: "20px", fontWeight: 600, cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}><Linkedin size={16} /> LinkedIn</a>
                     <a href="https://github.com/M7mdAyoub" target="_blank" style={{ textDecoration: "none", padding: "10px 24px", backgroundColor: "rgba(255,255,255,0.1)", color: "white", border: "1px solid rgba(255,255,255,0.2)", borderRadius: "20px", fontWeight: 600, cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}><Github size={16} /> GitHub</a>
                   </div>
                 </div>
@@ -358,7 +361,19 @@ export default function Window({
 
                     <div style={{ marginBottom: "40px", position: "relative" }}>
                       <div style={{ position: "absolute", left: "-37px", top: "5px", width: "12px", height: "12px", borderRadius: "50%", backgroundColor: "#f59e0b", border: "2px solid #1e1e1e", boxShadow: "0 0 10px #f59e0b" }} />
-                      <h3 style={{ color: "#f59e0b", fontSize: "18px", marginBottom: "4px" }}>Full-Stack Development Junior @ Vatrenas</h3>
+                      <h3 style={{ color: "#f59e0b", fontSize: "18px", marginBottom: "4px" }}>DigiSkills Apprentice @ Integrated International</h3>
+                      <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "12px", marginBottom: "12px" }}>Apr 2026 – May 2026</div>
+                      <ul style={{ paddingLeft: "15px", fontSize: "14px", color: "rgba(255,255,255,0.9)", lineHeight: "1.6" }}>
+                        <li>Completed an intensive, practical apprenticeship program focused on Monitoring, Evaluation, and Learning (MEL) frameworks and data-driven decision-making.</li>
+                        <li>Formulated data collection strategies, designed sampling methods, and developed program logic models/Theory of Change (ToC) architectures.</li>
+                        <li>Built dynamic dashboards and data visualizations using Power BI and Excel to analyze complex datasets and streamline reporting.</li>
+                        <li>Designed and implemented workflow automations using Zapier to eliminate manual data bottlenecks and optimize process efficiency.</li>
+                      </ul>
+                    </div>
+
+                    <div style={{ marginBottom: "40px", position: "relative" }}>
+                      <div style={{ position: "absolute", left: "-37px", top: "5px", width: "12px", height: "12px", borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.3)", border: "2px solid #1e1e1e" }} />
+                      <h3 style={{ color: "white", fontSize: "18px", marginBottom: "4px" }}>Full-Stack Development Junior @ Vatrenas</h3>
                       <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "12px", marginBottom: "12px" }}>Jul 2025 – Feb 2026</div>
                       <ul style={{ paddingLeft: "15px", fontSize: "14px", color: "rgba(255,255,255,0.9)", lineHeight: "1.6" }}>
                         <li>Architected and deployed a new product-level subscription layer, engineering complex revenue-sharing logic.</li>

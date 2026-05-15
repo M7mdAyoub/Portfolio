@@ -12,7 +12,8 @@ const taglines = [
 const languages = [
   "JavaScript", "TypeScript", "C", "C#", "Python", "Dart", "PHP", "Ruby",
   "React", "Next.js", "Flutter", "ASP.NET Core", "Node.js", "Firebase",
-  "SQL Server", "MySQL", "HTML", "CSS", "Bootstrap", "Git",
+  "SQL Server", "PostgreSQL", "FastAPI", "Power BI", "Ruby on Rails", "Git",
+  "Linux", "Docker", "CI/CD", "RESTful APIs", "Pandas", "NumPy",
 ];
 
 // Double the array for seamless loop
@@ -45,7 +46,7 @@ export default function HeroIntro() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       style={{
-        height: "100vh",
+        height: "100dvh",
         width: "100vw",
         position: "relative",
         display: "flex",
@@ -90,7 +91,7 @@ export default function HeroIntro() {
           transition={{ delay: 0.3, duration: 0.8 }}
           style={{ fontSize: "12px", fontWeight: 600, letterSpacing: "4px", textTransform: "uppercase", color: "rgba(255, 255, 255, 0.5)", fontFamily: "var(--font-inter), sans-serif" }}
         >
-          Full-Stack Developer
+          Software Engineer & Data Analyst
         </motion.div>
 
         {/* Name - Creative Staggered Animation */}
@@ -211,7 +212,7 @@ export default function HeroIntro() {
         >
           {[
             { label: "GitHub", href: "https://github.com/M7mdAyoub" },
-            { label: "LinkedIn", href: "https://www.linkedin.com/in/mohammad-ayoub091/" },
+            { label: "LinkedIn", href: "https://www.linkedin.com/in/mhmd-ayoub/" },
             { label: "Email", href: "#contact" },
           ].map((link, i) => (
             <motion.a

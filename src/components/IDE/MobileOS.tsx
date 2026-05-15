@@ -10,24 +10,30 @@ import {
 const ALL_SKILLS = [
   { name: "C# / ASP.NET Core", category: "Backend Framework" },
   { name: "JavaScript", category: "Core Language" },
+  { name: "TypeScript", category: "Core Language" },
   { name: "Node.js / Express", category: "Backend Runtime" },
   { name: "Next.js", category: "Modern Frontend" },
   { name: "HTML / CSS", category: "Web Foundations" },
   { name: "Flutter", category: "Mobile UX" },
-  { name: "Firebase", category: "BaaS / Auth" },
-  { name: "C", category: "Systems Programming" },
+  { name: "Dart", category: "Mobile" },
   { name: "Python", category: "Scripting / AI" },
-  { name: "SQL Server", category: "Database" },
-  { name: "PHP / XAMPP", category: "Classic Web Stack" },
-  { name: "Odoo ERP", category: "Enterprise" },
-  { name: "GitHub", category: "Version Control" },
-  { name: "Docker", category: "Containerization" },
-  { name: "Bootstrap", category: "UI Framework" },
-  { name: "Redis", category: "Caching" },
-  { name: "Elasticsearch", category: "Search Tech" },
-  { name: "Red Hat", category: "System Admin" },
+  { name: "FastAPI", category: "Backend Framework" },
   { name: "Ruby on Rails", category: "Backend Framework" },
-  { name: "Cloud Computing", category: "Infrastructure" },
+  { name: "C", category: "Systems Programming" },
+  { name: "RESTful APIs", category: "Architecture" },
+  { name: "SQL Server", category: "Database" },
+  { name: "PostgreSQL", category: "Database" },
+  { name: "Linux", category: "System Admin" },
+  { name: "Docker", category: "Containerization" },
+  { name: "CI/CD", category: "DevOps" },
+  { name: "GitHub", category: "Version Control" },
+  { name: "Power BI", category: "Data Analytics" },
+  { name: "Excel", category: "Data Analytics" },
+  { name: "Pandas / NumPy", category: "Data Science" },
+  { name: "RSpec", category: "Testing" },
+  { name: "Unit Testing", category: "Testing" },
+  { name: "Zapier", category: "Automation" },
+  { name: "Agile/Scrum", category: "Methodology" },
 ];
 
 const PROJECT_GALLERIES: Record<string, { title: string, tech: string, desc: string, github?: string, live?: string, images: string[], labels?: string[] }> = {
@@ -104,7 +110,7 @@ function MobileContactForm() {
       <div style={{ textAlign: "center", marginBottom: "10px" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 700, color: "white" }}>Get in Touch</h2>
         <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "12px", marginTop: "5px" }}>
-          Message <strong style={{ color: "#8b5cf6" }}>mrm7md091@gmail.com</strong>
+          Message <strong style={{ color: "#8b5cf6" }}>mhmd-ayoub@outlook.com</strong>
         </p>
       </div>
 
@@ -222,7 +228,7 @@ export default function MobileOS({ onExit }: { onExit: () => void }) {
           <a href="https://github.com/M7mdAyoub" target="_blank" rel="noreferrer" style={{ width: "55px", height: "55px", backgroundColor: "rgba(0,0,0,0.5)", borderRadius: "14px", display: "flex", alignItems: "center", justifyContent: "center", color: "white", textDecoration: "none" }}>
             <Github size={28} />
           </a>
-          <a href="https://www.linkedin.com/in/mohammad-ayoub091/" target="_blank" rel="noreferrer" style={{ width: "55px", height: "55px", backgroundColor: "#0a66c2", borderRadius: "14px", display: "flex", alignItems: "center", justifyContent: "center", color: "white", textDecoration: "none" }}>
+          <a href="https://www.linkedin.com/in/mhmd-ayoub/" target="_blank" rel="noreferrer" style={{ width: "55px", height: "55px", backgroundColor: "#0a66c2", borderRadius: "14px", display: "flex", alignItems: "center", justifyContent: "center", color: "white", textDecoration: "none" }}>
             <Linkedin size={28} />
           </a>
           <div onClick={() => handleAppOpen('contact')} style={{ width: "55px", height: "55px", backgroundColor: "#8b5cf6", borderRadius: "14px", display: "flex", alignItems: "center", justifyContent: "center", color: "white", cursor: "pointer" }}>
@@ -274,10 +280,10 @@ export default function MobileOS({ onExit }: { onExit: () => void }) {
                     </div>
                   </div>
                   <h1 style={{ fontSize: "28px", fontWeight: 800 }}>Mohammad Ayoub</h1>
-                  <div style={{ color: "#06b6d4", fontSize: "14px", fontWeight: 600, margin: "8px 0 20px 0", letterSpacing: "1px" }}>COMPUTER SCIENCE • HTU</div>
+                  <div style={{ color: "#06b6d4", fontSize: "14px", fontWeight: 600, margin: "8px 0 20px 0", letterSpacing: "1px" }}>B.SC. COMPUTER SCIENCE • HTU 2026</div>
 
                   <p style={{ fontSize: "15px", lineHeight: "1.7", color: "rgba(255,255,255,0.8)", marginBottom: "40px" }}>
-                    Versatile developer with hands-on experience in full-stack engineering and mobile systems. Committed to building efficient, scalable software from the ground up.
+                    Junior Software Engineer and Data Analyst with 1+ year of production experience across full-stack web and mobile development, data analytics, and MEL frameworks. Proficient in building distributed backend systems (Ruby on Rails, PostgreSQL, Redis), cross-platform mobile apps (Flutter), and cloud-containerized deployments (Docker, Linux). Hands-on experience designing Theory of Change (ToC) architectures, Power BI dashboards, and automated data pipelines using Zapier and Python. Experienced in multilingual AI-powered search pipelines, financial data integrity, ERP integration (Odoo), and resolving complex production issues across the full stack. Comfortable working across the full product lifecycle from database design to front-end delivery and program monitoring.
                   </p>
 
                   <div style={{ width: "100%", textAlign: "left" }}>
@@ -364,7 +370,18 @@ export default function MobileOS({ onExit }: { onExit: () => void }) {
                 <div style={{ paddingLeft: "15px", borderLeft: "2px solid rgba(255,255,255,0.1)", marginLeft: "10px" }}>
                   <div style={{ marginBottom: "40px", position: "relative" }}>
                     <div style={{ position: "absolute", left: "-22px", top: "8px", width: "12px", height: "12px", borderRadius: "50%", backgroundColor: "#f59e0b", boxShadow: "0 0 10px #f59e0b" }} />
-                    <h3 style={{ color: "#f59e0b", fontSize: "18px", fontWeight: 700 }}>Full-Stack Jr @ Vatrenas</h3>
+                    <h3 style={{ color: "#f59e0b", fontSize: "18px", fontWeight: 700 }}>DigiSkills Apprentice @ Integrated International</h3>
+                    <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)", margin: "4px 0 15px 0", fontWeight: 500 }}>Apr 2026 – May 2026</div>
+                    <ul style={{ paddingLeft: "15px", fontSize: "14px", color: "rgba(255,255,255,0.9)", lineHeight: "1.7" }}>
+                      <li>Completed an intensive, practical apprenticeship program focused on Monitoring, Evaluation, and Learning (MEL) frameworks.</li>
+                      <li>Formulated data collection strategies and developed program logic models/Theory of Change (ToC) architectures.</li>
+                      <li>Built dynamic dashboards and data visualizations using Power BI and Excel to analyze complex datasets.</li>
+                      <li>Designed and implemented workflow automations using Zapier to eliminate manual data bottlenecks.</li>
+                    </ul>
+                  </div>
+                  <div style={{ marginBottom: "40px", position: "relative" }}>
+                    <div style={{ position: "absolute", left: "-22px", top: "8px", width: "12px", height: "12px", borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.3)" }} />
+                    <h3 style={{ color: "white", fontSize: "18px", fontWeight: 700 }}>Full-Stack Jr @ Vatrenas</h3>
                     <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)", margin: "4px 0 15px 0", fontWeight: 500 }}>Jul 2025 – Feb 2026</div>
                     <ul style={{ paddingLeft: "15px", fontSize: "14px", color: "rgba(255,255,255,0.9)", lineHeight: "1.7" }}>
                       <li>Built complex subscription & revenue systems.</li>

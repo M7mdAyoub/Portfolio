@@ -36,7 +36,7 @@ export default function LaptopFrame() {
   return (
     <>
       <div style={{ 
-        height: "100vh", 
+        height: "100dvh", 
         width: "100vw", 
         position: "relative", 
         display: "flex", 
@@ -175,7 +175,7 @@ export default function LaptopFrame() {
           />
 
           {/* ── Laptop Screen ── */}
-          <div style={{ width: "100%", aspectRatio: "16/10", backgroundColor: "#020202", position: "relative", zIndex: 10, overflow: "hidden", borderRadius: "4px", backfaceVisibility: "hidden", transformStyle: "preserve-3d", display: "flex", flexDirection: "column", boxShadow: "inset 0 0 20px rgba(0,0,0,0.8)" }}>
+          <div style={{ width: "100%", aspectRatio: "16/10", maxHeight: "55vh", backgroundColor: "#020202", position: "relative", zIndex: 10, overflow: "hidden", borderRadius: "4px", backfaceVisibility: "hidden", transformStyle: "preserve-3d", display: "flex", flexDirection: "column", boxShadow: "inset 0 0 20px rgba(0,0,0,0.8)" }}>
             {!isInside && <CLIEnvironment />}
           </div>
         </motion.div>
@@ -184,15 +184,15 @@ export default function LaptopFrame() {
         <AnimatePresence>
           {!isZooming && !isInside && (
             <motion.div
-              initial={{ opacity: 0, y: 100, scale: 0.5, rotateX: -45 }}
+              initial={{ opacity: 0, y: 30, scale: 0.5, rotateX: -45 }}
               whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ type: "spring", damping: 12, stiffness: 200, delay: 0.4 }}
               style={{
                 position: "relative",
                 zIndex: 100,
-                marginTop: "80px",
+                marginTop: "40px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",

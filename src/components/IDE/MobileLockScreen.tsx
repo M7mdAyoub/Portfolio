@@ -11,7 +11,7 @@ const NOTIFICATIONS = [
     icon: <Mail size={14} color="#fff" />,
     color: "#8b5cf6",
     title: "Mohammad Ayoub",
-    message: "Computer Science @ HTU. Full-Stack Developer specializing in C#, Next.js & Flutter.",
+    message: "Computer Science @ HTU. Software Engineer & Data Analyst.",
     time: "now"
   },
   {

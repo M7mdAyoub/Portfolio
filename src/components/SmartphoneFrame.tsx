@@ -36,7 +36,7 @@ export default function SmartphoneFrame() {
   return (
     <>
       <div style={{ 
-        height: "100vh", 
+        height: "100dvh", 
         width: "100vw", 
         position: "relative", 
         display: "flex", 

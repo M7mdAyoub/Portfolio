@@ -6,7 +6,7 @@ import LaptopFrame from "@/components/LaptopFrame";
 import SmartphoneFrame from "@/components/SmartphoneFrame";
 
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -18,13 +18,13 @@ export default function Home() {
   return (
     <main id="main-scroll-container" style={{ 
       backgroundColor: "#05050a",
-      height: "100vh",
+      height: "100dvh",
       overflowY: "auto",
       overflowX: "hidden",
       scrollSnapType: "y mandatory",
     }}>
       <HeroIntro />
-      {isMobile ? <SmartphoneFrame /> : <LaptopFrame />}
+      {isMobile === null ? null : (isMobile ? <SmartphoneFrame /> : <LaptopFrame />)}
     </main>
   );
 }
