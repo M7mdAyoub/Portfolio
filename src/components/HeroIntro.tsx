@@ -169,7 +169,6 @@ export default function HeroIntro() {
                    visible: { y: 0, opacity: 1, rotate: 0 }
                  }}
                  transition={{ type: "spring", damping: 10, stiffness: 200 }}
-                 whileHover={{ y: -10, scale: 1.1, color: "#e2e8f0", textShadow: "0 0 20px rgba(255,255,255,0.8)" }}
                  style={{ display: "inline-block", textShadow: "0 0 80px rgba(236, 72, 153, 0.3)", cursor: "default" }}
                >
                  {char === " " ? "\u00A0" : char}

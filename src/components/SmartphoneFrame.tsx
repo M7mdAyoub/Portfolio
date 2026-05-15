@@ -58,8 +58,8 @@ export default function SmartphoneFrame() {
             exit={{ opacity: 0 }}
             style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0 }}
           >
-            <div style={{ position: "absolute", top: "15%", left: "5%", width: "80vw", height: "80vw", background: "radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%)", borderRadius: "50%", filter: "blur(60px)", mixBlendMode: "screen", animation: "float-orb-2 22s ease-in-out infinite" }} />
-            <div style={{ position: "absolute", bottom: "10%", right: "0%", width: "90vw", height: "90vw", background: "radial-gradient(circle, rgba(236, 72, 153, 0.18) 0%, transparent 70%)", borderRadius: "50%", filter: "blur(80px)", mixBlendMode: "screen", animation: "float-orb-3 26s ease-in-out infinite" }} />
+            <div style={{ position: "absolute", top: "15%", left: "5%", width: "80vw", height: "80vw", background: "radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%)", borderRadius: "50%", animation: "float-orb-2 22s ease-in-out infinite" }} />
+            <div style={{ position: "absolute", bottom: "10%", right: "0%", width: "90vw", height: "90vw", background: "radial-gradient(circle, rgba(236, 72, 153, 0.12) 0%, transparent 70%)", borderRadius: "50%", animation: "float-orb-3 26s ease-in-out infinite" }} />
           </motion.div>
         )}
         

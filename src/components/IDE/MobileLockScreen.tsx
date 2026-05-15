@@ -101,8 +101,7 @@ export default function MobileLockScreen({ onUnlock }: { onUnlock: () => void })
             transition={{ delay: 0.2 + idx * 0.1 }}
             style={{
               padding: "12px 14px",
-              backgroundColor: "rgba(255, 255, 255, 0.12)",
-              backdropFilter: "blur(25px)",
+              backgroundColor: "rgba(30, 30, 50, 0.85)",
               borderRadius: "18px",
               border: "1px solid rgba(255, 255, 255, 0.1)",
               display: "flex",
