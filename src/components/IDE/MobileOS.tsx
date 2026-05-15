@@ -224,7 +224,7 @@ export default function MobileOS({ onExit }: { onExit: () => void }) {
         </div>
 
         {/* Dock */}
-        <div style={{ margin: "0 20px", padding: "18px", backgroundColor: "rgba(255,255,255,0.15)", backdropFilter: "blur(40px)", borderRadius: "30px", display: "flex", justifyContent: "space-between", alignItems: "center", border: "1px solid rgba(255,255,255,0.1)" }}>
+        <div style={{ margin: "0 20px", padding: "18px", backgroundColor: "rgba(30,30,40,0.85)", borderRadius: "30px", display: "flex", justifyContent: "space-between", alignItems: "center", border: "1px solid rgba(255,255,255,0.1)" }}>
           <a href="https://github.com/M7mdAyoub" target="_blank" rel="noreferrer" style={{ width: "55px", height: "55px", backgroundColor: "rgba(0,0,0,0.5)", borderRadius: "14px", display: "flex", alignItems: "center", justifyContent: "center", color: "white", textDecoration: "none" }}>
             <Github size={28} />
           </a>

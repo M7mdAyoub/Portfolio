@@ -89,14 +89,14 @@ export default function SmartphoneFrame() {
             animate={{ opacity: isZooming ? 0 : 1 }}
             style={{
               position: "absolute", inset: "-40px",
-              background: "radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.2) 0%, rgba(236, 72, 153, 0.1) 40%, rgba(0, 0, 0, 0) 70%)",
-              zIndex: 1, filter: "blur(40px)", pointerEvents: "none",
+              background: "radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.15) 0%, rgba(236, 72, 153, 0.08) 40%, rgba(0, 0, 0, 0) 70%)",
+              zIndex: 1, pointerEvents: "none",
             }}
           />
 
           {/* ── Smartphone Chassis ── */}
           <motion.div 
-            animate={{ opacity: isZooming ? 0 : 1, filter: isZooming ? "blur(10px)" : "blur(0px)" }}
+            animate={{ opacity: isZooming ? 0 : 1 }}
             transition={{ duration: 0.6 }}
             style={{
               position: "absolute", inset: "-12px",
