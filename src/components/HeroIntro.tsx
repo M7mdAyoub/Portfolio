@@ -54,6 +54,7 @@ export default function HeroIntro() {
   // Mouse parallax
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!containerRef.current) return;
+    if (window.innerWidth < 768) return;
     const rect = containerRef.current.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
     const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
@@ -209,7 +210,7 @@ export default function HeroIntro() {
               style={{
                 display: "flex", alignItems: "center", gap: "8px", padding: "10px 20px",
                 background: "rgba(255, 255, 255, 0.04)", border: "1px solid rgba(255, 255, 255, 0.08)",
-                borderRadius: "12px", backdropFilter: "blur(10px)",
+                borderRadius: "12px",
                 animation: "glow-pulse 4s ease-in-out infinite", animationDelay: `${i * 0.5}s`,
               }}
             >

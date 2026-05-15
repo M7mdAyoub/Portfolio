@@ -65,7 +65,7 @@ export default function MobileLockScreen({ onUnlock }: { onUnlock: () => void })
         <div style={{ position: "absolute", top: "-10%", left: "-10%", width: "120%", height: "120%", 
              background: "radial-gradient(circle at center, rgba(139, 92, 246, 0.25) 0%, #000 70%)" }} />
              <div style={{ position: "absolute", bottom: "10%", right: "10%", width: "60%", height: "60%", 
-             background: "radial-gradient(circle at center, rgba(236, 72, 153, 0.2) 0%, transparent 70%)", filter: "blur(40px)" }} />
+             background: "radial-gradient(circle at center, rgba(236, 72, 153, 0.2) 0%, transparent 70%)" }} />
       </div>
 
       {/* Clock & Date Area */}

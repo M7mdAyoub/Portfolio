@@ -253,7 +253,7 @@ export default function MobileOS({ onExit }: { onExit: () => void }) {
             }}
           >
             {/* App Header */}
-            <div style={{ paddingTop: "60px", paddingBottom: "15px", paddingLeft: "15px", paddingRight: "15px", display: "flex", alignItems: "center", borderBottom: "1px solid rgba(255,255,255,0.05)", backgroundColor: "rgba(13,13,21,0.95)", backdropFilter: "blur(20px)" }}>
+            <div style={{ paddingTop: "60px", paddingBottom: "15px", paddingLeft: "15px", paddingRight: "15px", display: "flex", alignItems: "center", borderBottom: "1px solid rgba(255,255,255,0.05)", backgroundColor: "rgba(13,13,21,0.98)" }}>
               <button
                 onClick={() => {
                   if (activeApp.startsWith("project_")) setActiveApp("projects");
